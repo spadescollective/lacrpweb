@@ -5,13 +5,27 @@ const app = express();
 //Deprecation of res.sendfile is invalid, "sendFile" is currently not working, so ignore the console log, as it's not true.
 
 // GET / file/index landing
+app.get('/licenses', (req, res) => {
+  res.sendfile('views/licenses.txt')
+});
+
 app.get('/', (req, res) => {
-  res.sendfile('pages/index.html')
+  res.sendfile('views/index.html')
 });
 // GET/SEND file
 app.get('/second', (req, res) => {
-  res.sendfile('pages/secondpage.html')
+  res.sendfile('views/secondpage.html')
 });
+
+app.get('/views/lacrpbluelogo.png', (req, res) => {
+  res.sendfile('views/lacrpbluelogo.png')
+});
+
+
+
+// Call Public Static
+app.use('/public', express.static(process.cwd() + '/public'));
+app.use('/lacrpbluelogo.png', express.static(process.cwd() + '/lacrpbluelogo.png'));
 
 // Handle 404
 app.use(function(req, res) {

@@ -1,4 +1,39 @@
-/* CSS Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 body {
+font-family: 'Montserrat', sans-serif;
+background: #e8e8e8;
+weight: 900;
+}
+
+.center {
+  margin: auto;
+  padding: 40px;
+  text-align: center;
+}
+
+.discbtn {
+  width: 200px;
+  height: auto;
+  background: linear-gradient(135deg, #1714e1 0%, #070d83 100%);
+  border-radius: 20px 20px 20px 20px;
+  font: Montserrat, sans-serif;
+  margin: auto;
+  padding: 30px;
+  color: black;
+}
+
+.discbtn:hover {
+ cursor: pointer;
+ background: gray;
+}
+
+a {
+  text-decoration: none;
+  color: #be7a96445;
+}
+
+/* Responsive */
+@media screen and (max-width: 1050px) {
   
 }
