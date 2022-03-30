@@ -6,7 +6,7 @@ const app = express();
 
 // GET / file/index landing
 app.get('/licenses', (req, res) => {
-  res.sendfile('views/licenses.txt')
+  res.sendfile('views/misc/licenses.txt')
 });
 
 app.get('/', (req, res) => {
@@ -17,15 +17,18 @@ app.get('/second', (req, res) => {
   res.sendfile('views/secondpage.html')
 });
 
-app.get('/views/lacrpbluelogo.png', (req, res) => {
-  res.sendfile('views/lacrpbluelogo.png')
+app.get('/views/misc/lacrpbluelogo.png', (req, res) => {
+  res.sendfile('views/misc/lacrpbluelogo.png')
 });
 
-
+app.get('/views/misc/500.html', (req, res) => {
+  res.sendfile('errors/500.htm')
+});
 
 // Call Public Static
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use('/lacrpbluelogo.png', express.static(process.cwd() + '/lacrpbluelogo.png'));
+
 
 // Handle 404
 app.use(function(req, res) {
